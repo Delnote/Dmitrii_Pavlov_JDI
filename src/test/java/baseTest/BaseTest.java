@@ -1,17 +1,17 @@
-package HW7;
+package baseTest;
 
 import com.epam.jdi.light.driver.get.DriverData;
+import hw7.JdiSite;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
-import static HW7.entities.MetalsAndColorsData.DATA_FORM;
-import static HW7.entities.Users.PITER;
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static hw7.entities.Users.PITER;
 
-public class JdiSiteTest {
+public class BaseTest {
+
     @BeforeClass
     public void beforeClass() {
         DriverData.CHROME_OPTIONS = () -> {
@@ -20,20 +20,12 @@ public class JdiSiteTest {
             return cap;
         };
         initElements(JdiSite.class);
-    }
-
-    @Test
-    public void differentElementsFormTest() {
-        JdiSite.open();
-        JdiSite.homePage.login(PITER);
-        JdiSite.homePage.checkLoggedin(PITER);
-        JdiSite.homePage.moveToMetalsAndColorsPage();
-        JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(DATA_FORM);
-        JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(DATA_FORM);
+        
     }
 
     @AfterClass
     public void afterClass() {
         killAllSeleniumDrivers();
     }
+
 }

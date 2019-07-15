@@ -1,7 +1,7 @@
-package HW7.pages;
+package hw7.pages;
 
-import HW7.entities.Users;
-import HW7.forms.JdiLoginForm;
+import hw7.entities.Users;
+import hw7.forms.JdiLoginForm;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
@@ -19,6 +19,9 @@ public class JdiHomePage extends WebPage {
     @Css(".profile-photo")
     private Button profilePhoto;
 
+    @Css(".fa fa-sign-out")
+    private Button logout;
+
     @XPath("//a[text() ='Metals & Colors']")
     private Button metalsAndColorsItem;
 
@@ -33,5 +36,10 @@ public class JdiHomePage extends WebPage {
 
     public void checkLoggedin(Users user) {
         userName.shouldBe().text(Matchers.equalTo(user.getFullName()));
+    }
+
+    public void logout() {
+        profilePhoto.click();
+        logout.click();
     }
 }

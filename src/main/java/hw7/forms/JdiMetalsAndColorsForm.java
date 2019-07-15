@@ -1,6 +1,6 @@
-package HW7.forms;
+package hw7.forms;
 
-import HW7.entities.MetalsAndColorsData;
+import hw7.entities.MetalsAndColorsData;
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.composite.Form;
