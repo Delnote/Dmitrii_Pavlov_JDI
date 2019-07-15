@@ -1,5 +1,8 @@
 package hw7.pages;
 
+import com.epam.jdi.light.elements.base.UIElement;
+import com.epam.jdi.light.ui.html.complex.Menu;
+import hw7.entities.HeaderMenu;
 import hw7.entities.Users;
 import hw7.forms.JdiLoginForm;
 import com.epam.jdi.light.elements.composite.WebPage;
@@ -22,16 +25,17 @@ public class JdiHomePage extends WebPage {
     @Css(".fa fa-sign-out")
     private Button logout;
 
-    @XPath("//a[text() ='Metals & Colors']")
-    private Button metalsAndColorsItem;
+
+    @XPath("//a[text() ='%s']")
+    private UIElement headerMenuItem;
 
     public void login(Users user) {
         profilePhoto.click();
         loginForm.login(user);
     }
 
-    public void moveToMetalsAndColorsPage() {
-        metalsAndColorsItem.click();
+    public void moveToMetalsAndColorsPage(HeaderMenu menuItem) {
+        headerMenuItem.get(menuItem.getMetalsAndColors()).click();
     }
 
     public void checkLoggedin(Users user) {

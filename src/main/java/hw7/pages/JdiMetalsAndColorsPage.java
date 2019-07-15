@@ -1,13 +1,14 @@
 package hw7.pages;
 
-import hw7.entities.MetalsAndColorsData;
-import hw7.forms.JdiMetalsAndColorsForm;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Text;
+import com.epam.jdi.light.ui.html.complex.Menu;
+import hw7.entities.MetalsAndColorsData;
+import hw7.forms.JdiMetalsAndColorsForm;
 import org.hamcrest.Matchers;
 
-import static hw7.entities.MetalsAndColorsData.DATA_FORM;
+import java.util.Arrays;
 
 public class JdiMetalsAndColorsPage extends WebPage {
 
@@ -18,18 +19,32 @@ public class JdiMetalsAndColorsPage extends WebPage {
 
     public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
 
+        // TODO You submit(send the data to the server) this form rather than just fill it.
+        // Fixed
         metalsAndColorsForm.fill(macData);
+    }
+
+    public void submitMetalsAndColorsFormData() {
         metalsAndColorsForm.submit.click();
     }
 
     public void checkMetalsAndColorsFormResult(MetalsAndColorsData macData) {
-        result.shouldBe().text(Matchers.containsString("Summary: " + metalsAndColorsForm
-                .addAndEvenSummResult(DATA_FORM)));
-        result.shouldBe().text(Matchers.containsString("Color: " + macData.getRed()));
-        result.shouldBe().text(Matchers.containsString("Metal: " + macData.getSelen()));
-        result.shouldBe().text(Matchers.containsString("Vegetables: " +
-                macData.getVegCucumber() + ", " + macData.getVegTomato()));
-        result.shouldBe().text(Matchers.containsString("Elements: " +
-                macData.getWater() + ", " + macData.getFire()));
+        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
+                .asList("Summary", metalsAndColorsForm
+                        .addAndEvenSummResult(macData))));
+
+        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
+                .asList("Color", macData.getColor())));
+
+        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
+                .asList("Metal", macData.getMetals())));
+
+        for (String item : macData.getElements()) {
+            result.shouldBe().text(Matchers.stringContainsInOrder(Arrays.asList("Elements", item)));
+        }
+
+        for (String item : macData.getVegetables()) {
+            result.shouldBe().text(Matchers.stringContainsInOrder(Arrays.asList("Vegetables", item)));
+        }
     }
 }

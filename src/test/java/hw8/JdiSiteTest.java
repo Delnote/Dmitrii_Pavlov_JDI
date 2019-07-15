@@ -18,6 +18,7 @@ import java.util.Map;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static hw7.entities.HeaderMenu.HEADER_MENU;
 import static hw7.entities.Users.PITER;
 import static hw8.Enams.DataSet.DATA_SET;
 
@@ -51,7 +52,7 @@ public class JdiSiteTest {
 
     @Test (dataProvider = "metalsAndColorsTestDataSet")
     public void differentElementsFormTest(MetalsAndColorsData macData) {
-        JdiSite.homePage.moveToMetalsAndColorsPage();
+        JdiSite.homePage.moveToMetalsAndColorsPage(HEADER_MENU);
         JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(macData);
         JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(macData);
     }

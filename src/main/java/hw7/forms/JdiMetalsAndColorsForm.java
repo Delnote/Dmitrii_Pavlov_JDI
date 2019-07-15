@@ -1,6 +1,5 @@
 package hw7.forms;
 
-import hw7.entities.MetalsAndColorsData;
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.composite.Form;
@@ -11,6 +10,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.MultiDropdown;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
+import hw7.entities.MetalsAndColorsData;
 
 public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
 
@@ -42,17 +42,28 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
     private UIElement logPanel;
 
     public void fill(MetalsAndColorsData macData) {
-        number.select(macData.getOdd());
-        number.select(macData.getEven());
-        colors.select(macData.getRed());
-        element.select(macData.getFire(), macData.getWater());
-        vegetables.select(macData.getVegTomato());
-        vegetables.select(macData.getVegCucumber());
-        metals.select(macData.getSelen());
+        colors.select(macData.getColor());
+        metals.select(macData.getMetals());
+
+        for (String item : macData.getSummary()) {
+            number.select(item);
+        }
+
+        for (String item : macData.getElements()) {
+            element.select(item);
+        }
+
+        for (String item : macData.getVegetables()) {
+            vegetables.select(item);
+        }
     }
 
     public String addAndEvenSummResult(MetalsAndColorsData macData) {
-        return  Integer.parseInt(macData.getOdd()) + Integer.parseInt(macData.getEven()) + "";
+        int res = 0;
+        for (String num : macData.getSummary()) {
+            res += Integer.parseInt(num);
+        }
+        return res + "";
     }
 
 }
