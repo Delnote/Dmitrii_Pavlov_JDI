@@ -11,6 +11,7 @@ public enum MetalsAndColorsData {
             "Water", "Red", "Selen",
             "Tomato", "Cucumber");
 
+    // TODO Why don't you use collections here?
     private final String odd;
     private final String even;
     private final String fire;

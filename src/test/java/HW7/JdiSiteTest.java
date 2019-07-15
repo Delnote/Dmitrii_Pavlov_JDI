@@ -27,6 +27,8 @@ public class JdiSiteTest {
         JdiSite.open();
         JdiSite.homePage.login(PITER);
         JdiSite.homePage.checkLoggedin(PITER);
+        // TODO It will be better to make parametrised method
+        // that can be used in order to open whatever page you want.
         JdiSite.homePage.moveToMetalsAndColorsPage();
         JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(DATA_FORM);
         JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(DATA_FORM);

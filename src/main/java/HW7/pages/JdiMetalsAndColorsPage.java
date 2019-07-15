@@ -18,8 +18,8 @@ public class JdiMetalsAndColorsPage extends WebPage {
     @XPath("//ul[@class = 'panel-body-list results']")
     private Text result;
 
+    // TODO You submit(send the data to the server) this form rather than just fill it.
     public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
-
         metalsAndColorsForm.fill(macData);
         metalsAndColorsForm.submit.click();
     }
