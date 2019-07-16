@@ -4,11 +4,6 @@
 <suite name="JdiSiteTesting">
     <test name="TestExercise1">
         <classes>
-            <class name="hw7.JdiSiteTest"/>
-        </classes>
-    </test>
-    <test name="TestExercise2">
-        <classes>
             <class name="hw8.JdiSiteTest"/>
         </classes>
     </test>

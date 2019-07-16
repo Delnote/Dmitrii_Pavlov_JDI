@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="JdiSiteTesting_hw8">
+    <test name="TestExercise08">
+        <classes>
+            <class name="hw8.JdiSiteTest"/>
+        </classes>
+    </test>
+</suite>
