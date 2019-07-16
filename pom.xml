@@ -10,12 +10,22 @@
 
     <profiles>
         <profile>
-            <id>JDI Example Test</id>
+            <id>JDI Example Test HW7</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/jdiExampleTest.xml</suite.xml>
+                <suite.xml>src/test/resources/jdiExampleTestHW7.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>JDI Example Test HW8</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/jdiExampleTestHW8.xml</suite.xml>
             </properties>
         </profile>
     </profiles>
