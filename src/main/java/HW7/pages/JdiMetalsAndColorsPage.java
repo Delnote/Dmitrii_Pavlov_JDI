@@ -3,7 +3,6 @@ package hw7.pages;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Text;
-import com.epam.jdi.light.ui.html.complex.Menu;
 import hw7.entities.MetalsAndColorsData;
 import hw7.forms.JdiMetalsAndColorsForm;
 import org.hamcrest.Matchers;
