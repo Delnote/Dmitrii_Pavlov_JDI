@@ -52,6 +52,11 @@ public class JdiSiteTest {
 
     @Test (dataProvider = "metalsAndColorsTestDataSet")
     public void differentElementsFormTest(MetalsAndColorsData macData) {
+        // TODO I don't get it. Read my previous comment again.
+        // I expected that you create method like
+        // openPageByHeaderMenu(HEADER_MENU.HOME)
+        // openPageByHeaderMenu(HEADER_MENU.METALS_AND_COLORS)
+        // ...
         JdiSite.homePage.moveToMetalsAndColorsPage(HEADER_MENU);
         JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(macData);
         JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(macData);

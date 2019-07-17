@@ -11,8 +11,6 @@ import java.util.List;
 public enum MetalsAndColorsData {
 
     DATA_FORM(
-            // TODO Why don't you use collections here?
-            // Fixed
             Arrays.asList("3", "8"),
             Arrays.asList("Fire", "Water"),
             "Red",

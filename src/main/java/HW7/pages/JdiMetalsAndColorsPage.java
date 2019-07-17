@@ -17,9 +17,6 @@ public class JdiMetalsAndColorsPage extends WebPage {
     private Text result;
 
     public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
-
-        // TODO You submit(send the data to the server) this form rather than just fill it.
-        // Fixed
         metalsAndColorsForm.fill(macData);
     }
 
