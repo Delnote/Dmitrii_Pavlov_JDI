@@ -12,7 +12,6 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 public class MetalsAndColorsData {
-
     private List<String> summary;
     private List<String> elements;
     private String color;

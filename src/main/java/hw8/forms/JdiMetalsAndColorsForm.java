@@ -59,7 +59,9 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
         }
     }
 
-    public String oddAndEvenSummResult(MetalsAndColorsData macData) {
+    public String oddAndEvenSumResult(MetalsAndColorsData macData) {
+        // TODO Basically, this method should not be in PO.
+        // TODO take a look on streams, map, mapToInt, intStream
         int res = 0;
         for (String num : macData.getSummary()) {
             res += Integer.parseInt(num);

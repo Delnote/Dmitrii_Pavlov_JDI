@@ -17,16 +17,19 @@ public class JdiMetalsAndColorsPage extends WebPage {
     private Text result;
 
     public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
-
         metalsAndColorsForm.fill(macData);
         metalsAndColorsForm.submit.click();
     }
 
+    // TODO The certain sequence of log's rows doesn't matter in this case.
+    // It will be easier to compare just two List<strings>
+    // First list you can generate from MetalsAndColors instance
+    // Second list can be generated from Log ui-element
     public void checkMetalsAndColorsFormResult(MetalsAndColorsData macData) {
 
         result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
                 .asList("Summary", metalsAndColorsForm
-                .oddAndEvenSummResult(macData))));
+                .oddAndEvenSumResult(macData))));
 
         result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
                 .asList("Color", macData.getColor())));
