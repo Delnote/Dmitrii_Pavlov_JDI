@@ -1,5 +1,6 @@
 package hw7;
 
+import hw7.entities.HeaderMenu;
 import hw7.pages.JdiMetalsAndColorsPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
@@ -15,5 +16,9 @@ public class JdiSite {
 
     public static void open() {
         homePage.open();
+    }
+
+    public static void openPageByHeaderMenu(HeaderMenu menuItem) {
+        homePage.moveToMetalsAndColorsPage(menuItem.getHeaderMenuItem());
     }
 }

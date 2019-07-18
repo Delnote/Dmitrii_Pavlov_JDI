@@ -18,9 +18,9 @@ import java.util.Map;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
-import static hw7.entities.HeaderMenu.HEADER_MENU;
+import static hw7.entities.HeaderMenu.METALS_AND_COLORS;
 import static hw7.entities.Users.PITER;
-import static hw8.Enams.DataSet.DATA_SET;
+import static hw8.enams.DataSet.DATA_SET;
 
 public class JdiSiteTest {
 
@@ -57,8 +57,10 @@ public class JdiSiteTest {
         // openPageByHeaderMenu(HEADER_MENU.HOME)
         // openPageByHeaderMenu(HEADER_MENU.METALS_AND_COLORS)
         // ...
-        JdiSite.homePage.moveToMetalsAndColorsPage(HEADER_MENU);
+
+        JdiSite.openPageByHeaderMenu(METALS_AND_COLORS);
         JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(macData);
+        JdiSite.metalsAndColorsPage.submitMetalsAndColorsFormData();
         JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(macData);
     }
 

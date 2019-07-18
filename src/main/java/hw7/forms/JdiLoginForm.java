@@ -15,12 +15,4 @@ public class JdiLoginForm extends Form<Users> {
 
     @FindBy(css = "#login-button")
     private Button submit;
-
-//    @Override
-//    public void login(Users user) {
-//        login.input(user.getLogin());
-//        password.input(user.getPassword());
-//
-//        submit.click();
-//    }
 }

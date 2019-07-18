@@ -1,4 +1,4 @@
-package hw8.Enams;
+package hw8.enams;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

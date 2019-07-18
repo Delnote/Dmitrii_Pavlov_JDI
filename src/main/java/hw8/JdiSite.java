@@ -3,6 +3,7 @@ package hw8;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
+import hw7.entities.HeaderMenu;
 import hw7.pages.JdiHomePage;
 import hw8.pages.JdiMetalsAndColorsPage;
 
@@ -15,5 +16,9 @@ public class JdiSite {
 
     public static void open() {
         homePage.open();
+    }
+
+    public static void openPageByHeaderMenu(HeaderMenu menuItem) {
+        homePage.moveToMetalsAndColorsPage(menuItem.getHeaderMenuItem());
     }
 }
