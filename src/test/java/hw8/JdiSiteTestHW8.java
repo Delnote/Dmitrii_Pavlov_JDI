@@ -5,8 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-import hw7.JdiSite;
-import hw7.entities.MetalsAndColorsData;
+import hw_7.JdiSite;
+import hw_7.entities.MetalsAndColorsData;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -14,8 +14,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
 
-import static hw7.entities.DataSet.DATA_SET;
-import static hw7.entities.HeaderMenu.METALS_AND_COLORS;
+import static hw_7.entities.DataSet.DATA_SET;
+import static hw_7.entities.HeaderMenu.METALS_AND_COLORS;
 
 public class JdiSiteTestHW8 extends BaseTest {
 
