@@ -1,18 +1,16 @@
-package hw7;
+package BaseTest;
 
 import com.epam.jdi.light.driver.get.DriverData;
+import hw7.JdiSite;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
-import static hw7.entities.HeaderMenu.METALS_AND_COLORS;
-import static hw7.entities.MetalsAndColorsData.DATA_FORM;
 import static hw7.entities.Users.PITER;
 
-public class JdiSiteTest {
+public class BaseTest {
 
     @BeforeClass
     public void beforeClass() {
@@ -22,24 +20,15 @@ public class JdiSiteTest {
             return cap;
         };
         initElements(JdiSite.class);
-    }
 
-    @Test
-    public void differentElementsFormTest() {
         JdiSite.open();
         JdiSite.homePage.login(PITER);
         JdiSite.homePage.checkLoggedin(PITER);
-        // TODO It will be better to make parametrised method
-        // that can be used in order to open whatever page you want.
-        // Fixed
-        JdiSite.openPageByHeaderMenu(METALS_AND_COLORS);
-        JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(DATA_FORM);
-        JdiSite.metalsAndColorsPage.submitMetalsAndColorsFormData();
-        JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(DATA_FORM);
     }
 
     @AfterClass
     public void afterClass() {
         killAllSeleniumDrivers();
     }
+
 }

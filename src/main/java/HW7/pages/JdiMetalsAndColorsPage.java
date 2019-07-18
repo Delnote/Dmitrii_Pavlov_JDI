@@ -1,46 +1,32 @@
 package hw7.pages;
 
+import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
-import com.epam.jdi.light.ui.html.common.Text;
 import hw7.entities.MetalsAndColorsData;
 import hw7.forms.JdiMetalsAndColorsForm;
-import org.hamcrest.Matchers;
+import org.testng.Assert;
 
-import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class JdiMetalsAndColorsPage extends WebPage {
 
     private JdiMetalsAndColorsForm metalsAndColorsForm;
 
-    @XPath("//ul[@class = 'panel-body-list results']")
-    private Text result;
+    @XPath("//ul[@class = 'panel-body-list results']/li")
+    private List<UIElement> resultSection;
 
-    public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
-        metalsAndColorsForm.fill(macData);
-    }
-
-    public void submitMetalsAndColorsFormData() {
+    public void submitMetalsAndColorsForm(MetalsAndColorsData macData) {
+        metalsAndColorsForm.fillMetalsAndColorsForm(macData);
         metalsAndColorsForm.submit.click();
     }
 
     public void checkMetalsAndColorsFormResult(MetalsAndColorsData macData) {
-        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
-                .asList("Summary", metalsAndColorsForm
-                        .addAndEvenSummResult(macData))));
+        Assert.assertEquals(actualLogList(), macData.expectedLogList());
+    }
 
-        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
-                .asList("Color", macData.getColor())));
-
-        result.shouldBe().text(Matchers.stringContainsInOrder(Arrays
-                .asList("Metal", macData.getMetals())));
-
-        for (String item : macData.getElements()) {
-            result.shouldBe().text(Matchers.stringContainsInOrder(Arrays.asList("Elements", item)));
-        }
-
-        for (String item : macData.getVegetables()) {
-            result.shouldBe().text(Matchers.stringContainsInOrder(Arrays.asList("Vegetables", item)));
-        }
+    private List<String> actualLogList() {
+        return resultSection.stream().map(UIElement::getText).collect(Collectors.toList());
     }
 }

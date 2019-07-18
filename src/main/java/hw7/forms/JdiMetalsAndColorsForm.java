@@ -44,7 +44,7 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
     @UI("//ul[@class='panel-body-list results']")
     private UIElement logPanel;
 
-    public void fill(MetalsAndColorsData macData) {
+    public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
 
         vegetables.select(vegetables.getSelected());
 
@@ -62,9 +62,5 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
         for (String item : macData.getVegetables()) {
             vegetables.select(item);
         }
-    }
-
-    public String addAndEvenSummResult(MetalsAndColorsData macData) {
-        return String.valueOf(macData.getSummary().stream().mapToInt(Integer::parseInt).sum());
     }
 }
