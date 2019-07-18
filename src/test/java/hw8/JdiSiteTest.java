@@ -59,9 +59,9 @@ public class JdiSiteTest {
         // ...
 
         JdiSite.openPageByHeaderMenu(METALS_AND_COLORS);
-        JdiSite.metalsAndColorsPage.fillMetalsAndColorsForm(macData);
-        JdiSite.metalsAndColorsPage.submitMetalsAndColorsFormData();
-        JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(macData);
+        JdiSite.fillMetalsAndColorsForm(macData);
+        JdiSite.submitForm();
+        JdiSite.checkMetalsAndColorsFormReasultData(macData);
     }
 
     @AfterClass

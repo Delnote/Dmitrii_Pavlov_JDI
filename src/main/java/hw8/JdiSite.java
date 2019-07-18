@@ -5,6 +5,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import hw7.entities.HeaderMenu;
 import hw7.pages.JdiHomePage;
+import hw8.entities.MetalsAndColorsData;
 import hw8.pages.JdiMetalsAndColorsPage;
 
 @JSite("https://epam.github.io/JDI/")
@@ -21,4 +22,17 @@ public class JdiSite {
     public static void openPageByHeaderMenu(HeaderMenu menuItem) {
         homePage.moveToMetalsAndColorsPage(menuItem.getHeaderMenuItem());
     }
+
+    public static void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
+        metalsAndColorsPage.fillMetalsAndColorsForm(macData);
+    }
+
+    public static void submitForm() {
+        metalsAndColorsPage.submitMetalsAndColorsFormData();
+    }
+
+    public static void checkMetalsAndColorsFormReasultData (MetalsAndColorsData macData) {
+        metalsAndColorsPage.checkMetalsAndColorsFormResult(macData);
+    }
+
 }
