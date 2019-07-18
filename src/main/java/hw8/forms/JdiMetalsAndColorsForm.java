@@ -63,6 +63,7 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
             vegetables.select(item);
         }
     }
+
 //        // TODO Basically, this method should not be in PO.
 //        // TODO take a look on streams, map, mapToInt, intStream
 //        // Fixed

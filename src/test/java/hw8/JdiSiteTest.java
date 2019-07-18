@@ -57,6 +57,7 @@ public class JdiSiteTest {
         // openPageByHeaderMenu(HEADER_MENU.HOME)
         // openPageByHeaderMenu(HEADER_MENU.METALS_AND_COLORS)
         // ...
+
         JdiSite.openPageByHeaderMenu(METALS_AND_COLORS);
         JdiSite.fillMetalsAndColorsForm(macData);
         JdiSite.submitForm();
