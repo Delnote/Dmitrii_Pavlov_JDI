@@ -7,10 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum HeaderMenu {
 
-    HEADER_MENU("Home", "Contact form", "Service", "Metals & Colors");
+    HOME("Home"),
+    CONTACT_FORM("Contact form"),
+    SERVICE("Service"),
+    METALS_AND_COLORS("Metals & Colors");
 
-    private final String home;
-    private final String contactForm;
-    private final String service;
-    private final String metalsAndColors;
+    final String headerMenuItem;
 }

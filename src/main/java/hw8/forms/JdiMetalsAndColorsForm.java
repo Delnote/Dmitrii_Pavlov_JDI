@@ -8,7 +8,6 @@ import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Button;
-import com.epam.jdi.light.ui.html.complex.MultiDropdown;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
 import hw8.entities.MetalsAndColorsData;
 
@@ -35,13 +34,19 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
     @Css("#submit-button")
     public Button submit;
 
-    @Css("#vegetables")
-    private MultiDropdown vegetables;
+    @JDropdown(root = "#salad-dropdown",
+            value = ".dropdown-toggle",
+            list = "li",
+            expand = ".caret"
+    )
+    private Droplist vegetables;
 
     @UI("//ul[@class='panel-body-list results']")
     private UIElement logPanel;
 
     public void fill(MetalsAndColorsData macData) {
+
+        vegetables.select(vegetables.getSelected());
 
         colors.select(macData.getColor());
         metals.select(macData.getMetals());
@@ -58,13 +63,7 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
             vegetables.select(item);
         }
     }
-
-    public String oddAndEvenSummResult(MetalsAndColorsData macData) {
-        int res = 0;
-        for (String num : macData.getSummary()) {
-            res += Integer.parseInt(num);
-        }
-        return res + "";
-    }
-
+//        // TODO Basically, this method should not be in PO.
+//        // TODO take a look on streams, map, mapToInt, intStream
+//        // Fixed
 }
