@@ -1,4 +1,4 @@
-package hw8.forms;
+package hw7.forms;
 
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.complex.Droplist;
@@ -9,7 +9,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
-import hw8.entities.MetalsAndColorsData;
+import hw7.entities.MetalsAndColorsData;
 
 public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
 
@@ -44,7 +44,7 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
     @UI("//ul[@class='panel-body-list results']")
     private UIElement logPanel;
 
-    public void fill(MetalsAndColorsData macData) {
+    public void fillMetalsAndColorsForm(MetalsAndColorsData macData) {
 
         vegetables.select(vegetables.getSelected());
 
@@ -63,8 +63,4 @@ public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
             vegetables.select(item);
         }
     }
-
-//        // TODO Basically, this method should not be in PO.
-//        // TODO take a look on streams, map, mapToInt, intStream
-//        // Fixed
 }

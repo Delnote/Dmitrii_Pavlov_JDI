@@ -4,7 +4,7 @@
 <suite name="JdiSiteTesting_hw8">
     <test name="TestExercise08">
         <classes>
-            <class name="hw8.JdiSiteTest"/>
+            <class name="hw8.JdiSiteTestHW8"/>
         </classes>
     </test>
 </suite>
