@@ -1,10 +1,10 @@
-package hw7;
+package hw77;
 
 import BaseTest.BaseTest;
 import org.testng.annotations.Test;
 
-import static hw7.entities.HeaderMenu.METALS_AND_COLORS;
-import static hw7.entities.MetalsAndColorsData.macDataHW7;
+import static hw77.entities.HeaderMenu.METALS_AND_COLORS;
+import static hw77.entities.MetalsAndColorsData.macDataHW7;
 
 public class JdiSiteTestHW7 extends BaseTest {
 
@@ -17,4 +17,5 @@ public class JdiSiteTestHW7 extends BaseTest {
         JdiSite.metalsAndColorsPage.submitMetalsAndColorsForm(macDataHW7);
         JdiSite.metalsAndColorsPage.checkMetalsAndColorsFormResult(macDataHW7);
     }
+
 }

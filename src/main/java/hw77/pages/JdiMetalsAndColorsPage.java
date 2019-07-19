@@ -1,10 +1,10 @@
-package hw7.pages;
+package hw77.pages;
 
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
-import hw7.entities.MetalsAndColorsData;
-import hw7.forms.JdiMetalsAndColorsForm;
+import hw77.entities.MetalsAndColorsData;
+import hw77.forms.JdiMetalsAndColorsForm;
 import org.testng.Assert;
 
 import java.util.List;

@@ -1,11 +1,11 @@
-package hw7;
+package hw77;
 
-import hw7.entities.HeaderMenu;
-import hw7.pages.JdiMetalsAndColorsPage;
+import hw77.entities.HeaderMenu;
+import hw77.pages.JdiMetalsAndColorsPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
-import hw7.pages.JdiHomePage;
+import hw77.pages.JdiHomePage;
 
 @JSite("https://epam.github.io/JDI/")
 public class JdiSite {

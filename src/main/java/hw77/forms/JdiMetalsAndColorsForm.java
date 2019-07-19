@@ -1,4 +1,4 @@
-package hw7.forms;
+package hw77.forms;
 
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.complex.Droplist;
@@ -9,7 +9,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
-import hw7.entities.MetalsAndColorsData;
+import hw77.entities.MetalsAndColorsData;
 
 public class JdiMetalsAndColorsForm extends Form<MetalsAndColorsData> {
 

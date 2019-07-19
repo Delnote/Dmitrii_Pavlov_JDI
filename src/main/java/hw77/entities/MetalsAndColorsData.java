@@ -1,4 +1,4 @@
-package hw7.entities;
+package hw77.entities;
 
 import lombok.*;
 

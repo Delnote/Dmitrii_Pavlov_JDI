@@ -1,6 +1,6 @@
-package hw7.forms;
+package hw77.forms;
 
-import hw7.entities.Users;
+import hw77.entities.Users;
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.TextField;
